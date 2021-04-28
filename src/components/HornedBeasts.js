@@ -1,13 +1,14 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
 
-class HornedBeastes extends React.Component{
+class HornedBeastes extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      votes : 0
+      votes: 0
     };
   }
 
@@ -17,21 +18,23 @@ class HornedBeastes extends React.Component{
     });
   }
 
-  render(){
+  render() {
     return (
-      <Card style={{ width: '18rem',margin:'2rem' }}>
-        <Card.Img variant="top" src = {this.props.imageUrl} />
-        <Card.Body>
-          <Card.Title>{this.props.title}</Card.Title>
-          <Card.Text>
-            {this.props.description}
-          </Card.Text>
-          <Card.Text>
-            {this.state.votes} ⭐Votes
-          </Card.Text>
-          <Button onClick={this.votesHandeler} variant="primary">Votes</Button>
-        </Card.Body>
-      </Card>
+      <CardColumns>
+        <Card>
+          <Card.Img variant="top" src = {this.props.imageUrl} />
+          <Card.Body>
+            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Text>
+              {this.props.description}
+            </Card.Text>
+            <Card.Text>
+              {this.state.votes} ⭐Votes
+            </Card.Text>
+            <Button onClick={this.votesHandeler} variant="primary">Votes</Button>
+          </Card.Body>
+        </Card>
+      </CardColumns>
     );
   }
 }
