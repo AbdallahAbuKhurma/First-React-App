@@ -15,7 +15,7 @@ class HornedBeastes extends React.Component{
     this.setState({
       votes: this.state.votes + 1
     });
-  } 
+  }
 
   render(){
     return (
@@ -27,7 +27,7 @@ class HornedBeastes extends React.Component{
             {this.props.description}
           </Card.Text>
           <Card.Text>
-            {this.state.votes} ⭐Votes 
+            {this.state.votes} ⭐Votes
           </Card.Text>
           <Button onClick={this.votesHandeler} variant="primary">Votes</Button>
         </Card.Body>
@@ -35,6 +35,5 @@ class HornedBeastes extends React.Component{
     );
   }
 }
-    
 
 export default HornedBeastes;
