@@ -1,58 +1,22 @@
 import React from 'react';
-import HornedBeastes from './HornedBeasts.js';
-import jsonData from '../assets/data.json';
+import HornedBeasts from './HornedBeasts';
+import CardColumns from 'react-bootstrap/CardColumns';
 
 class Main extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: jsonData,
-    };
-  }
-
   render() {
-    const list = this.state.data.map(element => {
-      return (
-        <HornedBeastes key = {element.title} imageUrl={element.image_url} title={element.title} alt={element.title} description={element.description} />
-      );
-
-    });
     return (
-      <section>
-        {list}
-      </section>
+      <CardColumns>
+        {this.props.list.map(element => {
+          return (
+
+            <HornedBeasts key = {element.title} title={element.title} imageUrl={element.image_url} description={element.description} viewBeast={this.props.viewBeast} />
+          );
+        })
+        }
+      </CardColumns>
+
     );
   }
-
 }
+
 export default Main;
-
-//old return
-// <div>
-//                 <section>
-//                     <HornedBeastes imageUrl = {'http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg'} title = {'UniWhal'} alt = {'UniWhal'} description = {'A unicorn and a narwhal nuzzling their horns'} />
-//                 </section>
-
-//                 <section>
-//                     <HornedBeastes imageUrl = {'https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80'} title = {'Rhino Family'} alt = {'Rhino Family'} description = {'Mother (or father) rhino with two babies'} />
-//                 </section>
-
-//                 <section>
-//                     <HornedBeastes imageUrl = {'https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg'} title = {'Unicorn Head'} alt = {'Unicorn Head'} description = {'Someone wearing a creepy unicorn head mask'} />
-//                 </section>
-
-//             </div>
-
-// old render
-
-// const list = [];
-//     this.state.data.forEach(element => {
-//       list.push(
-//         <div>
-//           <HornedBeastes key={element.title} imageUrl={element.image_url} title={element.title} alt={element.title} description={element.description} />
-//         </div>
-//       );
-//     });
-//     return list;
-//   }
