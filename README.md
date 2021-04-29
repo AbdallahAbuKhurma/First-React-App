@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Project Overview
+
+This is my first react web-application and its about HornedBeast, It displaying multiple HornedBeast image cardes, modal and form with multiple options depends on the number of hourns that the beast has.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
