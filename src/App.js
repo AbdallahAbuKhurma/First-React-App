@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import './App.css';
 import React from 'react';
 import Header from './components/header';
